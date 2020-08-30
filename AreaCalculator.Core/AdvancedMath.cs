@@ -8,16 +8,23 @@ namespace AreaCalculator.Core
 {
     public static class AdvancedMath
     {
-    
-
-
+        /// <summary>
+        /// Возвращает площадь фигуры
+        /// </summary>
+        /// <param name="shape"></param>
+        /// <returns></returns>
         public static float Area(Polygon shape)
         {
+            // Специальная обработка для круга, так как он единственная фигура, которая не является многоугольником.
             if (shape is Circle circle)
                 return Convert.ToSingle(Math.PI * Math.Pow(circle.Radius, 2));
             return Area(shape.GetDots());
         }
-
+        /// <summary>
+        /// Возвращает площадь произвольного простого многоугольника, по списку его вершин
+        /// </summary>
+        /// <param name="dots"></param>
+        /// <returns></returns>
         public static float Area(List<Vector2> dots)
         {
             //Формула площади Гаусса

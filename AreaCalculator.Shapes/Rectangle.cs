@@ -6,10 +6,20 @@ namespace AreaCalculator.Shapes
 {
     public class Rectangle : Polygon
     {
+        /// <summary>
+        /// Начальная точка
+        /// </summary>
         public Vector2 PositionStart { get; }
+        /// <summary>
+        /// Конечная точка
+        /// </summary>
         public Vector2 PositionEnd { get; }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="positionStart">Начальная точка</param>
+        /// <param name="positionEnd">Конечная точка</param>
         public Rectangle(Vector2 positionStart, Vector2 positionEnd)
             :base(GetDots(positionStart, positionEnd))
         {
